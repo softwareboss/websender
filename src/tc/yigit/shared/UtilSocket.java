@@ -17,7 +17,6 @@ import tc.yigit.events.EventManager;
 public class UtilSocket {
 	
 	private static EventManager manager;
-	
 	public static EventManager getManager(){
 		if(manager == null){
 			if(SocketConfig.isBukkit()){
