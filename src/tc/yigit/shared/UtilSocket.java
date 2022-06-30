@@ -6,8 +6,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
 import java.security.MessageDigest;
-
-import com.google.common.io.BaseEncoding;
+import java.util.Base64;
 
 import tc.yigit.bukkit.BukkitEvents;
 import tc.yigit.bungeecord.BungeeEvents;
@@ -57,8 +56,8 @@ public class UtilSocket {
         return base64 ? DecodeBASE64(buffer.toString()) : buffer.toString();
     }
 	
-	public static String DecodeBASE64(String text) throws UnsupportedEncodingException {
-		byte[] bytes = BaseEncoding.base64().decode(text);
+	public static String DecodeBASE64(String text) throws UnsupportedEncodingException {		
+		byte[] bytes = Base64.getDecoder().decode(text);
 		return new String(bytes, "UTF-8");
 	}
     
